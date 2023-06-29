@@ -86,7 +86,7 @@ const config = {
         title: 'Scrapper Jobs',
         logo: {
           alt: 'Scrapper Jobs Logo',
-          src: 'img/logo.svg',
+          src: 'img/scrapper.svg',
         },
         items: [
           {
