@@ -105,18 +105,18 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-            dropdownItemsAfter: [
-              {
-                to: '/versions',
-                label: 'All versions',
-              },
-            ],
-
-          }
+          // {
+          //   type: 'docsVersionDropdown',
+          //   position: 'right',
+          //   dropdownActiveClassDisabled: true,
+          //   dropdownItemsAfter: [
+          //     {
+          //       to: '/versions',
+          //       label: 'All versions',
+          //     },
+          //   ],
+          //
+          // }
         ],
       },
       footer: {
