@@ -42,14 +42,15 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/MathieuSchaff/scrapper-doc/tree/main/'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
+            'https://github.com/MathieuSchaff/scrapper-doc/tree/main/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -63,10 +64,18 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      algolia: {
+        appId: 'YOUR_APP_ID',
+        apiKey: '2',
+        indexName: 'scrapper-job',
+      },
+
+      // Replace with your search engine ID
+
       navbar: {
-        title: 'My Site',
+        title: 'Scrapper Jobs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Scrapper Jobs Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -78,7 +87,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/facebook/scrapper-job',
             label: 'GitHub',
             position: 'right',
           },
@@ -86,6 +95,18 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            dropdownItemsAfter: [
+              {
+                to: '/versions',
+                label: 'All versions',
+              },
+            ],
+
+          }
         ],
       },
       footer: {
