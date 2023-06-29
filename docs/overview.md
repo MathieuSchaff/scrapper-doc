@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: "Overview"
 ---
 
-# What is this project about?
+# Main goal of this project
 
 This app is here to scrap the jobs you look for in several sites: linkedin, indeed, welcome to the jungle.
 
