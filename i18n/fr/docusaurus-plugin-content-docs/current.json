@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Installation.link.generated-index.description": {
+    "message": "Cette section explique comment démarrer le projet.",
+    "description": "The generated-index page description for category Installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Installation backend": {
+    "message": "Installation backend",
+    "description": "The label for category Installation backend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Installation backend.link.generated-index.description": {
+    "message": "Cette section explique comment installer le backend.\n Le backend contient les données de l'application dans un db postgres et une app Node.js.",
+    "description": "The generated-index page description for category Installation backend in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.How to use it?": {
+    "message": "Comment l'utiliser?",
+    "description": "Le label pour la catégorie How to use it? dans la barre latérale tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.How to use it?.link.generated-index.description": {
+    "message": "Nous allons voir comment utiliser l'application.",
+    "description": "The generated-index page description for category How to use it? in sidebar tutorialSidebar"
+  }
+}
