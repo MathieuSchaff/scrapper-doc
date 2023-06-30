@@ -34,13 +34,13 @@ cd FolderRoot
 ```
 ### Clone the frontend:
 ```shell
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/MathieuSchaff/scrapper-frontend
 ```
 
 ### Clone the backend:
 
 ```shell
-git clone  https://github.com/MathieuSchaff/job-scrapper
+git clone  https://github.com/MathieuSchaff/scrapper-ts
 ```
 
 
