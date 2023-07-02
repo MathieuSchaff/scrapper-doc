@@ -1,8 +1,0 @@
-{
-  "label": "Installation backend",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "In this section we will install and launch the backend of the application.\n The backend includes the main scrapper application and also the database."
-  }
-}
