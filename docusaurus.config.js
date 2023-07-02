@@ -41,7 +41,14 @@ const config = {
       }
     },
   },
-
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        language: ["en", "fr"],
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -97,7 +104,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/scrapper-job',
+            href: 'https://github.com/MathieuSchaff/scrapper-doc/tree/main/',
             label: 'GitHub',
             position: 'right',
           },
