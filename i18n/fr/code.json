@@ -400,5 +400,9 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "homepage.title.sub": {
+    "message": "Scrapper puissant de jobs",
+    "description": "The title of the blog"
   }
 }
