@@ -1,0 +1,89 @@
+# Configuration de l'application Job Scraper
+
+Ce dépôt contient le fichier de configuration de l'application Job Scraper. Les options de configuration vous permettent de personnaliser divers paramètres pour différentes plateformes d'emploi.
+
+## Configuration commune
+
+La configuration commune s'applique à tous les scrapers et inclut les propriétés suivantes :
+
+- `jobSearch` : Le mot-clé pour la recherche d'emploi.
+- `location` : L'emplacement de l'emploi recherché.
+- `numOfPages` : Le nombre de pages à récupérer pour chaque plateforme d'emploi.
+
+## Configuration LinkedIn
+
+La configuration de LinkedIn comprend les propriétés suivantes :
+
+- `email` : Votre adresse email LinkedIn.
+- `password` : Votre mot de passe LinkedIn.
+- `remote` : Le nombre représentant votre filtre de date d'affichage préféré.
+  - `1`: Past 24 hours
+  - `2`: Past week
+  - `3`: Past month
+
+- `experienceLevel` : Le nombre représentant votre niveau d'expérience préféré.
+  - `1`: Internship
+  - `2`: Entry level
+  - `3`: Associate
+  - `4`: Mid-Senior level
+  - `5`: Director
+  - `6`: Executive
+
+- `workplaceType` : Le nombre représentant votre type de lieu de travail préféré.
+  - `1`: On-site
+  - `2`: Remote
+  - `3`: Hybrid
+
+
+Pour configurer les options LinkedIn, mettez à jour l'objet `linkedin` dans le fichier de configuration avec les valeurs souhaitées.
+
+**Note** : Veillez à conserver votre adresse e-mail et votre mot de passe LinkedIn en toute sécurité et évitez de les soumettre au contrôle de version.
+
+## Welcome to the Jungle Configuration
+
+Je ne recommande pas de se connecter au site web de Welcome to the Jungle car les tâches listées lors de la connexion sont les mêmes que celles listées lors de la déconnexion.
+Mais si vous voulez vraiment vous connecter, vous pouvez le faire en spécifiant un email et un mot de passe à l'objet welcomeToTheJungle à l'intérieur de l'objet config.
+Peut-être voudrez-vous étendre la fonctionnalité de ce scrapper pour permettre l'envoi automatique d'un email aux emplois par le biais de welcome to the jungle.
+Je ne recommande pas de se connecter car cela augmente le risque d'être détecté.
+
+La configuration de Welcome to the Jungle comprend les propriétés suivantes :
+- `email`: Your Welcome to the Jungle email address.
+- `password`: Your Welcome to the Jungle password.
+- `contractType`: The contract type filter. Available options:
+
+  1. Permanent contract
+  2. Work-study
+  3. Internship
+  4. Fixed-term / Temporary
+  5. Other
+  6. Freelance
+  7. Part-time
+  8. International Corporate Volunteer Program
+  9. Graduate program
+  10. Volunteer work
+  11. IDV
+
+- `remoteWorkOption`: The remote work option filter. Available options:
+  - `all`: All remote work options
+  - `punctual`: Occasional remote
+  - `partial`: Partial remote
+  - `fulltime`: Open to full remote
+
+Vous pouvez également passer un tableau de nombres.
+
+Par exemple contractType : [6, 7, 4] si vous voulez des emplois de différents types de contrats.
+
+Si vous souhaitez effectuer une recherche par type de contrat, vous pouvez donner à `contractType` soit le nom du type de contrat (sous forme de chaîne de caractères)
+soit son numéro dans la liste ci-dessus (sous forme de nombre).
+Par exemple : contractType : "Stage" // est identique à :contractType : 3
+
+Si vous ne spécifiez pas de type de contrat, le script recherchera tous les types d'emplois.
+Vous pouvez également spécifier contractType : "all", mais ce n'est pas nécessaire
+Voir : `/app/wttjgl/utils.js`
+Ceci est réalisé en utilisant la fonction `getContractTypeId` dans le script. Cette fonction prend le type de contrat dans l'objet config,
+recherche l'identifiant correspondant dans le tableau `contractTypes`, et renvoie l'identifiant.
+Si le type de contrat spécifié est un nombre, la fonction le traite comme un index dans le tableau `contractTypes`.
+Si le type de contrat est une chaîne de caractères, la fonction trouve l'objet dans le tableau `contractTypes` avec la propriété `name` correspondante.
+
+Note : Si vous spécifiez un type de contrat qui n'est pas dans la liste ci-dessus, ou un nombre qui est en dehors de la plage de la liste,
+la fonction `getContractTypeId` retournera `null`, et le script recherchera tous les types de contrats.
