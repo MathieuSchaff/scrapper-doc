@@ -179,7 +179,7 @@ const config = {
                 label: 'GitHub',
                 href: "https://github.com/MathieuSchaff/scrapper-doc/tree/main/",
                 logo: {
-                  color: "red",
+                  color: "#1c71d8",
                   label: "Github",
                 },
               },
