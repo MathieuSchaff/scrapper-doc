@@ -103,6 +103,7 @@ const config = {
             label: 'Tutorial',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/contribute', label: 'Contribute', position: 'left' },
           {
             href: 'https://github.com/MathieuSchaff/scrapper-doc/tree/main/',
             label: 'GitHub',
@@ -142,16 +143,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: "https://twitter.com/MathSchaff"
+              },
+              {
+                label: 'Linkedin',
+                href: "https://www.linkedin.com/in/mathieu-schaff-frontend/",
+              },
+              {
+                label: 'Other projects',
+                href: "https://www.mathieu-schaff.com/"
               },
             ],
           },
@@ -164,12 +165,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: "https://github.com/MathieuSchaff/scrapper-doc/tree/main/"
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Scrapper Jobs. Built with Docusaurus and with heart.`,
       },
       prism: {
         theme: lightCodeTheme,
