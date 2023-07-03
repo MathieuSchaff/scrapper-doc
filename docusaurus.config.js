@@ -144,15 +144,27 @@ const config = {
             items: [
               {
                 label: 'Twitter',
-                href: "https://twitter.com/MathSchaff"
+                href: "https://twitter.com/MathSchaff",
+                logo: {
+                  color: "red",
+                  label: "Twitter",
+                },
               },
               {
                 label: 'Linkedin',
                 href: "https://www.linkedin.com/in/mathieu-schaff-frontend/",
+                logo: {
+                  color: "red",
+                  label: "Linkedin",
+                },
               },
               {
                 label: 'Other projects',
-                href: "https://www.mathieu-schaff.com/"
+                href: "https://www.mathieu-schaff.com/",
+                logo: {
+                  color: "red",
+                  label: "GalleryThumbnails",
+                },
               },
             ],
           },
@@ -165,7 +177,11 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: "https://github.com/MathieuSchaff/scrapper-doc/tree/main/"
+                href: "https://github.com/MathieuSchaff/scrapper-doc/tree/main/",
+                logo: {
+                  color: "red",
+                  label: "Github",
+                },
               },
             ],
           },
