@@ -16,7 +16,6 @@ export default function FooterLinkItem({ item }) {
   return (
     <Link
       className={clsx("footer__link-item", styles.link)}
-
       {...(href
         ? {
           href: prependBaseUrlToHref ? normalizedHref : href,
@@ -27,8 +26,6 @@ export default function FooterLinkItem({ item }) {
       {...props}>
       {label}
       {IconComponent && <IconComponent color={logo.color ?? undefined} size={logo.size ?? undefined} />}
-
-
     </Link>
   );
 }
