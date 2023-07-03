@@ -146,7 +146,7 @@ const config = {
                 label: 'Twitter',
                 href: "https://twitter.com/MathSchaff",
                 logo: {
-                  color: "red",
+                  color: "#1c71d8",
                   label: "Twitter",
                 },
               },
@@ -154,7 +154,7 @@ const config = {
                 label: 'Linkedin',
                 href: "https://www.linkedin.com/in/mathieu-schaff-frontend/",
                 logo: {
-                  color: "red",
+                  color: "#1c71d8",
                   label: "Linkedin",
                 },
               },
@@ -162,7 +162,7 @@ const config = {
                 label: 'Other projects',
                 href: "https://www.mathieu-schaff.com/",
                 logo: {
-                  color: "red",
+                  color: "#1c71d8",
                   label: "GalleryThumbnails",
                 },
               },
