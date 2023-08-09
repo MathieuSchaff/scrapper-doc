@@ -27,3 +27,6 @@
   --ifm-color-primary-lighter: #8ebbf0;
   --ifm-color-primary-lightest: #bad5f6;
 }
+.DocSearch{
+  min-width: 120px;
+}
