@@ -27,7 +27,7 @@ or
 ```shell
 docker compose up
 ```
-if it does not work it probably will prompt you the error. In many case you'll need an elevation of priviledge.
+if it does not work,  it probably will prompt you the error. In many case you'll need an elevation of priviledge.
 Try sudo, or just add your user to the docker group:
 
 ```shell
