@@ -51,7 +51,12 @@ The Welcome to the Jungle configuration includes the following properties:
 
 - `email`: Your Welcome to the Jungle email address.
 - `password`: Your Welcome to the Jungle password.
-- `contractType`: The contract type filter. Available options:
+- `filters` can contain 3 keys: 
+  1 - contractType
+  2 - remote
+  3 - experienceLevel
+
+- `contractType`: The contract type filter. Can be a number or array of number. Available options:
 
   1. Permanent contract
   2. Work-study
@@ -59,21 +64,23 @@ The Welcome to the Jungle configuration includes the following properties:
   4. Fixed-term / Temporary
   5. Other
   6. Freelance
-  7. Part-time
-  8. International Corporate Volunteer Program
-  9. Graduate program
-  10. Volunteer work
-  11. IDV
 
-- `remoteWorkOption`: The remote work option filter. Available options:
+- `remote`: The remote work option filter. Available options:
   - `all`: All remote work options
   - `punctual`: Occasional remote
   - `partial`: Partial remote
   - `fulltime`: Open to full remote
+- `experienceLevel`: The experience you want to choose 
+    Can be a number from 0 to 4. Or an array of number.
+    Each number correspond to :
+   0: 0 to 1 year exp
+   1: 1 to 3 year exp
+   2: 3 to 5 year exp
+   4: 5 to 10 year exp
 
-You can also pass an array of number.
+You can also pass an array of number for contractType
 
-For exemple contractType: [6, 7, 4] if you want jobs from different type of contract.
+For exemple contractType: [6, 1, 4] if you want jobs from different type of contract.
 
 If you want to search by contract type, you can set `contractType` to either the name of the contract type (as a string)
 or its number in the list above (as a number).
