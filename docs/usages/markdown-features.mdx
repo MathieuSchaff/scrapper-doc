@@ -2,6 +2,32 @@
 
 This repository contains the configuration file for the Job Scraper app. The configuration options allow you to customize various settings for different job platforms.
 
+## Before using it
+
+go in the backend folder.
+
+There is a change that the selectors used to get the dom elements are obsolete. 
+
+This can be check by running 
+```bash
+npx playwright tests
+```
+or 
+
+```bash
+npx playwright tests --ui
+```
+
+if it does not work, you will have to update the selectors by yourself. You can do this easily by running :
+```bash
+npx playwright codegen https://www.welcometothejungle.com/en/jobs\?refinementList%5Boffices.country_code%5D%5B%5D\=FR\&query\=react%20js\&page\=1
+```
+ by running this command you will be able to select with ease the right selector.
+ You just have to understand what the code does, but it is quite easy.
+
+For exemple, the scrapper of welcome to the jungle is located in the backend part "/app/wttjgl/main.js"
+
+
 ## Common Configuration
 
 The common configuration applies to all scrapers and includes the following properties:
