@@ -1,33 +1,18 @@
 # Job Scraper App Configuration
 
 This repository contains the configuration file for the Job Scraper app. The configuration options allow you to customize various settings for different job platforms.
+## How to launch the scrapper?
 
-## Before using it
+Simple type the command at the root of the scrapper backend(but configure it before, see below):
 
-go in the backend folder.
-
-There is a change that the selectors used to get the dom elements are obsolete. 
-
-This can be check by running 
-```bash
-npx playwright tests
-```
-or 
-
-```bash
-npx playwright tests --ui
+```shell
+npm start
 ```
 
-if it does not work, you will have to update the selectors by yourself. You can do this easily by running :
-```bash
-npx playwright codegen https://www.welcometothejungle.com/en/jobs\?refinementList%5Boffices.country_code%5D%5B%5D\=FR\&query\=react%20js\&page\=1
-```
- by running this command you will be able to select with ease the right selector.
- You just have to understand what the code does, but it is quite easy.
+## How it works ?
 
-For exemple, the scrapper of welcome to the jungle is located in the backend part "/app/wttjgl/main.js"
-
-
+The configuration is a simple javascript object located in the 
+`/config/config.ts`
 ## Common Configuration
 
 The common configuration applies to all scrapers and includes the following properties:
@@ -36,7 +21,80 @@ The common configuration applies to all scrapers and includes the following prop
 - `location`: The desired job location.
 - `numOfPages`: The number of pages to scrape for each job platform.
 
-## LinkedIn Configuration
+
+## Welcome to the Jungle Configuration
+ To be able to scrap jobs on welcome to the jungle, you need to configure :
+```typescript
+ interface WelcomeToTheJungleConfig {
+  account?: {
+    email: string;
+    password: string;
+  };
+  filters?: {
+    contractType?: WTTJGLContractType | number[];
+    remote?: string;
+    experienceLevel?: WTTJGLExperience;
+  };
+}
+```
+setting the account obj is not recommended.
+Just set the filters if you want to filter the jobs by:
+- contrat type
+- remote or not
+- experience level
+
+  1 - contractType type :
+
+```typescript
+ WTTJGLContractType | number[];
+ ```
+
+```typescript
+ type WTTJGLContractType =
+  | "Permanent contract"
+  | "Work-study"
+  | "Internship"
+  | "Fixed-term / Temporary"
+  | "Other"
+  | "Freelance"
+  | "all"
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6;
+```
+You can set an array of number: the 1 correspond to the permanent contrat and so on. 
+
+
+For exemple contractType: [6,1, 4] if you want jobs from different type of contract.
+
+ 2 - remote type:
+  is a string than can be either :
+  ```typescript
+no
+punctual
+partial
+fulltime
+  ```
+  3 - experienceLevel type:
+
+```typescript 
+type WTTJGLExperience = Array<0 | 1 | 2 | 3 | 4>;
+```
+`experienceLevel`: The experience you want to choose 
+    Can be a number from 0 to 4. Or an array of number.
+    Each number correspond to :
+   0: 0 to 1 year exp
+   1: 1 to 3 year exp
+   2: 3 to 5 year exp
+   4: 5 to 10 year exp
+
+You can also pass an array of number for contractType
+
+
+## LinkedIn Configuration (working on linkedin, do not use it now)
 
 The LinkedIn configuration includes the following properties:
 
@@ -66,59 +124,3 @@ To configure the LinkedIn options, update the `linkedin` object in the configura
 
 **Note**: Make sure to store your LinkedIn email and password securely and avoid committing them to version control.
 
-## Welcome to the Jungle Configuration
-
-I don't recommend login in welcome to the jungle website because the jobs listed while logged in are the same as the job listed while logged out.
-But if you really want to login, you can, by specifying a key email and a key password to the welcomeToTheJungle object inside the config obj.
-Perhaps you will want to extend the functionnality of this scrapper to enable sending automatic email to the jobs through welcome to the jungle.
-I don't recommend login in because it just increase the risk of being detected.
-
-The Welcome to the Jungle configuration includes the following properties:
-
-- `email`: Your Welcome to the Jungle email address.
-- `password`: Your Welcome to the Jungle password.
-- `filters` can contain 3 keys: 
-  1 - contractType
-  2 - remote
-  3 - experienceLevel
-
-- `contractType`: The contract type filter. Can be a number or array of number. Available options:
-
-  1. Permanent contract
-  2. Work-study
-  3. Internship
-  4. Fixed-term / Temporary
-  5. Other
-  6. Freelance
-
-- `remote`: The remote work option filter. Available options:
-  - `all`: All remote work options
-  - `punctual`: Occasional remote
-  - `partial`: Partial remote
-  - `fulltime`: Open to full remote
-- `experienceLevel`: The experience you want to choose 
-    Can be a number from 0 to 4. Or an array of number.
-    Each number correspond to :
-   0: 0 to 1 year exp
-   1: 1 to 3 year exp
-   2: 3 to 5 year exp
-   4: 5 to 10 year exp
-
-You can also pass an array of number for contractType
-
-For exemple contractType: [6, 1, 4] if you want jobs from different type of contract.
-
-If you want to search by contract type, you can set `contractType` to either the name of the contract type (as a string)
-or its number in the list above (as a number).
-For example: contractType: "Internship" // is the same as :contractType: 3
-
-If you don't specify a contract type, the script will search for all types of jobs.
-You can also specify contractType: "all" but it is not necessary
-See: `/app/wttjgl/utils.js`
-This is achieved using the `getContractTypeId` function in the script. This function takes the contractType from the config object,
-looks up the corresponding id in the `contractTypes` array, and returns the id.
-If the specified contract type is a number, the function treats it as an index into the `contractTypes` array.
-If the contract type is a string, the function finds the object in the `contractTypes` array with a matching `name` property.
-
-Note: If you specify a contract type that isn't in the list above, or a number that's outside the range of the list,
-the `getContractTypeId` function will return `null`, and the script will search for all types of jobs.
